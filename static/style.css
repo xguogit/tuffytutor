@@ -1,0 +1,99 @@
+*
+{
+    font-family: arial;
+    margin: 0;
+}
+
+body
+{
+    background-color: #F5F5F0;
+    #background-image: url("/static/langsdorf.jpg");
+    #background-repeat: no-repeat;
+    #background-size: 100% 100%;
+}
+
+.header
+{
+    background-color: #001452;
+    background: rgb(28, 45, 102);
+    background: rgba(28, 45, 102, .90);
+    height: 150px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
+
+.content
+{
+    margin-top: 180px;
+}
+
+.logo
+{
+    margin-left: 20px;
+}
+
+.register-form, .login-form
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register-form input[type="submit"], .login-form input[type="submit"]
+{
+    background-color: #001452;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.register-form input[type="text"], .login-form input[type="text"],
+.register-form input[type="password"], .login-form input[type="password"],
+.register-form input[type="date"], select
+{
+    border-radius: 5px;
+    padding: 5px;
+    width: 250px;
+}
+
+a
+{
+    text-decoration: none;
+    color: #001452;
+}
+
+
+.agreement-box
+{
+    float: left;
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+.agreement-text
+{
+    color: red;
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 70px;
+}
+
+.ethnicity
+{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.dob
+{
+    margin-left: 75px;
+    font-size: 12;
+}
+
+
+@media screen and (max-width: 1199px)
+{
+
+}

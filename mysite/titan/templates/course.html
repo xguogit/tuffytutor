@@ -1,0 +1,260 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{% static "bootstrap.min.css" %}" />
+        <link href="{% static "style_profile.css" %}" rel="stylesheet"></link>
+        <script src="{% static "Chart.js" %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="{% static "jquery-2.1.4.min" %}"></script>
+        <style type="text/css">
+            .bs-example{
+            	margin: 20px;
+            }
+        </style>
+        <title>{{ course.course_name }}</title>
+        <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="col-lg-12 navBar">
+                    <!---TEST-->
+                        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a href="/profile/" class="navbar-brand">
+                                        <img src="{% static "tuffy_tutors.png" %}" style="margin-top:-9px;height:40px;width:65px;margin-left:-5px;margin-right:-5px;">
+                                    </a>
+                                </div>
+                                <div id="navbarCollapse" class="collapse navbar-collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="/profile/">HOME</a></li>
+                                        <li><a href="/message/">MESSAGES</a></li>
+                                        <li><a href="/course_list/">COURSE LIST</a></li>
+                                        <li><a href="/edit_profile/">EDIT PROFILE</a></li>
+                                        <li><a href="/logout/">LOGOUT</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="/profile/">{{ user_info.first_name }} {{ user_info.last_name }}</a></li>
+                                        <li><a href="/profile/">Rating: {{ user_rating }}</a></li>
+                                        <li><a href="/profile/">Posts: {{ num_posts }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                         </nav>
+                    <!---TEST-->
+                </div>
+            </div>
+        </div>
+
+        <div class="course-content">
+            <div class="course-title">
+                <h1><a href="/course/{{course.id}}">{{ course.course_name }}</a></h1>
+                <h3>{{ course.course_description }}</h3>
+            </div>
+            <div class="course-body">
+                <div class="course-side-panel" align="center">
+                    <button type="button" class="btn btn-primary s-button active" id="course-questions">Questions</button><br><br>
+                    <button type="button" class="btn btn-primary s-button" id="course-hangouts">Hangouts</button><br><br>
+                    <button type="button" class="btn btn-primary s-button" id="course-members">Members</button><br><br>
+                </div>
+                <div class="course-display">
+                    <div class="course-button">
+                        <a href="/course/{{course.id}}/post_question/" class="btn btn-primary c-button" role="button">Ask A Question</a>
+                    </div>
+                    <div class="course-output">
+                        <table class="question-table">
+                        {%for question in question_tuple%}
+                            <tr class="question-item">
+                                <td class="question-score" align="center">
+                                    {{question.3}}
+                                </td>
+                                <td class="question-title">
+                                    <a href="/course/{{course.id}}/question/{{question.0}}">{{question.1}}</a><br>
+                                    <div class="question-poster"><a href="#">{{question.4}}&nbsp;{{question.5}}&nbsp;</a></div><div class="question-date">{{question.2}}</div>
+                                </td>
+                                <td class="question-rating" align="right">
+                                    <form action="/course/{{course.id}}/" method="POST">
+                                        <input type="hidden" name="question_id" value="{{question.0}}">
+                                        {% csrf_token %}
+                                        <input type="submit" class="btn btn-primary" name="upvote" value="&#x25B2;">
+                                        <input type="submit" class="btn btn-primary" name="downvote" value="&#x25BC;">
+                                    </form>
+                                </td>
+                            </tr>
+                        {%endfor%}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if num_users > 0 %}
+        <div class="statistics" align="center">
+            <h3>Statistics for {{course.course_name}}</h3>
+            <div class="statistic-body">
+                <h4>Gender Distribution</h4>
+                <div class="chart">
+                    <canvas id="gender-chart" width="250" height="250"></canvas>
+                </div>
+                <div id="gender-legend" class="chart-legend" align="left"></div>
+                <h4>Ethnicity Distribution</h4>
+                <div class="chart">
+                    <canvas id="ethnicity-chart" width="250" height="250"></canvas>
+                </div>
+                <div id="ethnicity-legend" class="chart-legend" align="left"></div>
+                {% if num_previous_users > 0 %}
+                <h4>Skill Level Averages</h4>
+                <div class="chart">
+                    <canvas id="avg-skill-level-chart" width="250" height="250"></canvas>
+                </div>
+                <div id="avg-skill-level-legend" class="chart-legend" align="left"></div>
+                <div class="rating-stats"><h4>Average Course Difficulty: {{avg_course_difficulty}}</h4></div>
+                <div class="rating-stats"><h4>Easiest Professor in {{course.course_name}}: {{highest_rated_prof.first_name}}&nbsp;{{highest_rated_prof.last_name}}</h4></div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <script>
+            $('#course-questions').click(function() {
+                $('#course-questions').attr('class', 'btn btn-primary s-button active');
+                $('#course-hangouts').attr('class', 'btn btn-primary s-button');
+                $('#course-members').attr('class', 'btn btn-primary s-button');
+                $('.course-display').html('<div class="course-button"><a href="/course/{{course.id}}/post_question/" class="btn btn-primary c-button" role="button">Ask A Question</a></div><div class="course-output">{%for question in question_tuple%}{{question.0}}&nbsp;{{question.1}}&nbsp;{{question.2}}<br>{%endfor%}</div>');
+            });
+
+            $('#course-hangouts').click(function() {
+                $('#course-questions').attr('class', 'btn btn-primary s-button');
+                $('#course-hangouts').attr('class', 'btn btn-primary s-button active');
+                $('#course-members').attr('class', 'btn btn-primary s-button');
+                $('.course-display').html('<div class="course-button"><a href="/add_hangout/" class="btn btn-primary c-button" role="button">Add A Hangout</a></div><div class="hangout-output">{%for hangout in hangouts%}<div class="hangout-item"><a href="/hangout/{{hangout.id}}/">{{hangout.title}}</a><br>{{hangout.date}}<br></div>{%endfor%}</div>');
+            });
+
+            $('#course-members').click(function() {
+                $('#course-questions').attr('class', 'btn btn-primary s-button');
+                $('#course-hangouts').attr('class', 'btn btn-primary s-button');
+                $('#course-members').attr('class', 'btn btn-primary s-button active');
+                $('.course-display').html('<div class="current-students"><div class="current-students-header">Current Students</div><div class="current-students-body">{%for user in current_users%}<a href="/badge/{{user.id}}/">{{user.first_name}}&nbsp;{{user.last_name}}</a><br>{%endfor%}</div></div><div class="previous-students"><div class="previous-students-header">Previous Students</div><div class="previous-students-body">{%for user in previous_users%}<a href="/badge/{{user.id}}/">{{user.first_name}}&nbsp;{{user.last_name}}</a><br>{%endfor%}</div></div>');
+            });
+        </script>
+        <script>
+            var gender_data = [
+                {
+                    value: {{male}},
+                    color: "#09355C",
+                    label: "Males"
+                },
+                {
+                    value: {{female}},
+                    color: "#CBCBCB",
+                    label: "Females"
+                },
+                {
+                    value: {{other}},
+                    color: "#B61B12",
+                    label: "Other"
+                }
+            ];
+
+            var ethnicity_data = [
+                {
+                    value: {{NA}},
+                    color: "orange",
+                    label: "Native Hawaiian or Pacific Islander"
+                },
+                {
+                    value: {{AM}},
+                    color: "pink",
+                    label: "American Indian or Alaska Native"
+                },
+                {
+                    value: {{BL}},
+                    color: "cornflowerblue",
+                    label: "Black or African American"
+                },
+                {
+                    value: {{HI}},
+                    color: "yellow",
+                    label: "Hispanic or Latino"
+                },
+                {
+                    value: {{AS}},
+                    color: "green",
+                    label: "Asian"
+                },
+                {
+                    value: {{WH}},
+                    color: "purple",
+                    label: "White"
+                },
+                {
+                    value: {{OT}},
+                    color: "red",
+                    label: "Other"
+                },
+            ];
+
+            var gender_skill_level = {
+                labels: ["Male", "Female"],
+                datasets: [
+                    {
+                        label:  "Average Skill Level (Males and Females)",
+                        fillColor: "rgba(50,255,50,0.5)",
+                        strokeColor: "rgba(220,220,220,0.8)",
+                        highlightFill: "rgba(10,255,10,0.75)",
+                        highlightStroke: "rgba(220,220,220,1)",
+                        data: [{{avg_male_skill_level}}, {{avg_female_skill_level}}]
+                    },
+                    ]
+
+            };
+
+            var options = {
+                segmentShowStroke: false,
+                animateRotate: true,
+                animateScale: false,
+            }
+
+            var gender = document.getElementById("gender-chart").getContext("2d");
+            var gender_chart = new Chart(gender).Doughnut(gender_data, options);
+            document.getElementById('gender-legend').innerHTML = gender_chart.generateLegend();
+
+            var ethnicity = document.getElementById("ethnicity-chart").getContext("2d");
+            var ethnicity_chart = new Chart(ethnicity).Doughnut(ethnicity_data, options);
+            document.getElementById('ethnicity-legend').innerHTML = ethnicity_chart.generateLegend();
+
+            var avg_skill_level = document.getElementById("avg-skill-level-chart").getContext("2d");
+            var avg_skill_level_chart = new Chart(avg_skill_level).Bar(gender_skill_level, {barShowStroke: false});
+            document.getElementById('avg-skill-level-legend').innerHTML = avg_skill_level_chart.generateLegend();
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

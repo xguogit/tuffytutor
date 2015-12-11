@@ -1,0 +1,30 @@
+.cp
+{
+    background: pink;
+}
+
+.chart-legend
+{
+    background: orange;
+}
+
+.chart-legend ul
+{
+    padding-left: 0;
+    margin-left: 0;
+
+}
+
+.chart-legend li span
+{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.chart-legend li
+{
+    list-style-type: none;
+}

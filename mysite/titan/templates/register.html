@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>REGISTRATION PAGE</title>
+		<link type="text/css" rel="stylesheet" href="{% static "style.css" %}">
+	</head>
+	<body>
+        <div class="header">
+            <div class="logo">
+                <a href="/"><img src="{% static "logo.png" %}" height=140 width=270></a>
+    	    </div>
+		</div>
+
+        <div class="content">
+            {% if errors %}
+    	        <ul>
+    	            {% for error in errors %}
+    	            <li><font color="red">{{ error }}</font></li>
+    	            {% endfor %}
+    	        </ul>
+    	    {% endif %}
+    		<div class="register-form" align="center">
+    		    <h3>Sign-Up</h3><br>
+        		<form action="/register/" method="POST">
+        			<input type="text" name="email" placeholder="Email" value="{{email}}"><br><br>
+        			<input type="text" name="email_confirm" placeholder="Confirm Email" value="{{email}}"><br><br>
+        			<input type="text" name="first_name" placeholder="First Name" value="{{first_name}}"><br><br>
+        			<input type="text" name="last_name" placeholder="Last Name" value="{{last_name}}"><br><br>
+        			<input type="password" name="password" placeholder="Password"><br><br>
+        			<input type="password" name="password_confirm" placeholder="Confirm Password"><br><br>
+
+                    <select name = "gender">
+        			    <option name = "NULL" value = "NULL">Gender</option>
+        			    <option name = "MALE" value = "MALE">Male</option>
+        			    <option name = "FEMALE" value = "FEMALE">Female</option>
+        			    <option name = "OTHER" value = "OTHER">Other</option>
+        			</select><br><br>
+
+        			<select name = "birth_year">
+        			    <option name = "NULL" value = "NULL">Birth Year</option>
+        			    {%for year in years%}
+        			        <option name = "{{year}}" value = "{{year}}">{{year}}</option>
+        			    {%endfor%}
+        			</select><br><br>
+
+        			<select name = "user_type">
+        			    <option name = "NULL" value = "NULL">Account Type</option>
+        			    <option name = "STUDENT" value = "STUDENT">Student</option>
+        			</select><br><br>
+
+        			<select name = "ethnicity">
+        			    <option name = "NULL" value = "NULL">Ethnicity/Race</option>
+        			    <option name = "NA" value = "NA">Native Hawaiian or Pacific Islander</option>
+        			    <option name = "AM" value = "AM">American Indian or Alaska Native</option>
+        			    <option name = "BL" value = "BL">Black or African American</option>
+        			    <option name = "HI" value = "HI">Hispanic or Latino</option>
+        			    <option name = "AS" value = "AS">Asian</option>
+        			    <option name = "WH" value = "WH">White</option>
+        			    <option name = "DE" value = "DE">Decline To Specify</option>
+        			    <option name = "OT" value = "OT">Other</option>
+        			</select><br><br>
+
+        			{% csrf_token %}
+        			<div class="agreement-box">
+        			    <input type="checkbox" name="agreement" value="agreement">
+        			</div>
+        			<div class="agreement-text">
+        			    <h5>By checking this box, I am agreeing to use this site responsibility and as intended.
+                		I will not use this site to cheat on my assignments. This includes posting direct homework
+                		assignment questions and programming assignments</h5>
+        			</div><br>
+        			<input type="submit" name="submit_registration" value="Submit">
+        			<input type="submit" name="cancel" value="Cancel">
+        		</form>
+    		</div>
+    	</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>LOGIN PAGE</title>
+		<link type="text/css" rel="stylesheet" href="{% static "style.css" %}">
+	</head>
+	<body>
+        <div class="header">
+    	    <div class="logo">
+                <a href="/"><img src="{% static "logo.png" %}" height=140 width=270></a>
+    	    </div>
+		</div>
+
+        <div class="content">
+            {% if errors %}
+    	        <ul>
+    	            {% for error in errors %}
+    	            <li><font color="red">{{ error }}</font></li>
+    	            {% endfor %}
+    	        </ul>
+    	    {% endif %}
+    		<div class="login-form" align="center">
+        		<form action="" method="POST">
+        		    <h3>Sign-In</h3><br>
+        			<input type="text" name="email" placeholder="Email" value="{{email}}"><br><br>
+        			<input type="password" name="password" placeholder="Password"><br><br>
+        			{% csrf_token %}
+        			<input type="submit" name="submit_login" value="Submit">
+        		</form>
+    		</div>
+    		<br>
+    		<h5 align="center">Not a member? <a href="/register/">Sign-Up</a></h5>
+    		<br><br><br><br>
+    		<h5 align="center"><font color="red">We ask that you please use this site responsibly.</font></h5>
+		</div>
+	</body>
+</html>

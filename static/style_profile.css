@@ -1,0 +1,1101 @@
+*
+{
+    margin: 0;
+}
+
+body
+{
+    background-color: #F1F1F1;
+    background-image: url("langsdorf.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+li
+{
+    list-style-type: none;
+}
+
+.navBar {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.addCourseDiv {
+    height: 253px;
+}
+
+.addPanel {
+    height: 253px;
+}
+
+.add-course
+{
+    text-align: center;
+    width: 100%;
+}
+
+.hangoutDiv
+{
+    height: 615px;
+    margin-bottom: 62px;
+}
+
+.hangPanel
+{
+    height: 570px;
+    padding: 0px;
+}
+
+.hangPanel input[type="submit"], .current-course-panel input[type="submit"],
+.previous-course-panel input[type="submit"]
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.current-courses, .previous-courses
+{
+    border-top: 1px solid #8fa7bb;
+}
+
+.activityDiv {
+    height: 615px;
+}
+
+.activityPanel {
+    height: 570px;
+    padding: 0px;
+}
+
+.courseDiv {
+    height: 615px;
+}
+
+.user-input
+{
+    height: 70px;
+}
+
+.navbar-collapse
+{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-right
+{
+    background-color: #275883;
+}
+
+.user-posts
+{
+    margin: 0;
+    padding: 0;
+}
+
+.post-entity
+{
+    border-bottom: 1px solid #8fa7bb;
+    padding: 5px;
+}
+
+.current-courses, .previous-courses
+{
+    height: 207px;
+    max-height: 207px;
+    overflow-y: scroll;
+    margin-right: 1px;
+    border-bottom-right-radius: 10px;
+}
+
+.skill-level
+{
+    color: #8fa7bb;
+    font-size: 13px;
+}
+
+.current-courses h5, .previous-courses h5
+{
+    border-bottom: 2px solid #8fa7bb;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: #8fa7bb;
+    color: white;
+}
+
+.current-courses li, .previous-courses li
+{
+    margin: 15px;
+}
+
+.current-courses input[type="button"], .previous-courses input[type="button"]
+{
+    padding: 0px;
+    width: 100px;
+}
+
+.current-course-panel, .previous-course-panel
+{
+    height: 253px;
+    padding: 0px;
+}
+
+.hangout-list
+{
+    border-top: 1px solid #8fa7bb;
+    margin-right: 1px;
+    height: 524px;
+    max-height: 524px;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10px;
+}
+
+.hangout-item
+{
+    border-bottom: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.hangout-item a
+{
+    text-decoration: none;
+}
+
+.add-current-course
+{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.add-current-course h4, .add-hangout h4
+{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.add-current-course select
+{
+    width: 160px;
+}
+
+.hangout-date
+{
+    font-size: 10px;
+}
+
+.add-hangout
+{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 400px;
+}
+
+.add-hangout input[type="text"], .add-hangout input[type="date"],
+.add-hangout input[type="time"], .add-hangout textarea,
+.add-hangout select
+{
+    width: 300px;
+}
+
+.add-hangout textarea
+{
+    resize: none;
+    height: 100px;
+}
+
+.form-label
+{
+    margin-left: 25px;
+    font-size: 12px;
+}
+
+.activity-feed
+{
+    border-top: 1px solid #8fa7bb;
+    height: 570px;
+    max-height: 570px;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10px;
+}
+
+.course-content h1, .course-content h3
+{
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.course-side-panel a
+{
+    color: #F1F1F1;
+    text-decoration: none;
+}
+
+.course-side-panel a:hover
+{
+    color: white;
+}
+
+.course-title
+{
+    margin-left: 7.5%;
+    width: auto;
+}
+
+.course-body
+{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-side-panel
+{
+    padding-top: 7px;
+    background: #367ab7;
+    height: 500px;
+    float: left;
+    width: 20%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.course-display
+{
+    background: white;
+    height: 500px;
+    width: 80%;
+    margin-left: 20%;
+    border: 1px solid silver;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.course-button
+{
+    margin: 5px;
+}
+
+.course-button input[type="submit"]
+{
+    width: 100%;
+}
+
+.c-button
+{
+    width: 100%;
+}
+
+.s-button
+{
+    width: 90%;
+}
+
+.course-output
+{
+    height: 448px;
+    max-height: 448px;
+    overflow-y: scroll;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid silver;
+}
+
+.hangout-output
+{
+    height: 448px;
+    max-height: 448px;
+    overflow-y: scroll;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid silver;
+}
+
+.hangout-item
+{
+    padding-left: 20px;
+}
+
+.c-output
+{
+    height: 487px;
+    max-height: 487px;
+    overflow-y: scroll;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: 1px solid silver;
+}
+
+.question-table
+{
+    width: 100%;
+}
+
+.question-item
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid silver;
+    padding-bottom: 5px;
+    vertical-align: middle;
+}
+
+.question-score
+{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    color: #367ab7;
+    vertical-align: middle;
+    width: 10%;
+}
+
+.question-date
+{
+    font-size: 10px;
+    color: silver;
+}
+
+.question-rating
+{
+    padding-right: 10px;
+}
+
+.question-title
+{
+    width: 60%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.question-title a, .course-title h1 a, .course-question-title h1 a
+{
+    text-decoration: none;
+}
+
+.course-question-content h1, .course-question-content h3
+{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.course-question-content
+{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-question-title, .course-question-body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.question-answer-table
+{
+    width: 100%;
+}
+
+.question-header-title
+{
+    background: #367ab7;
+    color: white;
+    padding-left: 10px;
+}
+
+.question-header-content
+{
+    padding: 10px;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+    background: white;
+}
+
+.question-header h4
+{
+    padding: 0;
+    margin: 0;
+}
+
+.question-item
+{
+    vertical-align: middle;
+}
+
+.answer-textarea
+{
+    width: 90%;
+}
+
+.answer-button input[type="submit"]
+{
+    width: 100%;
+    height: 100%;
+}
+
+.answer-textarea
+{
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.answer-button
+{
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.answer-input
+{
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-top: 1px solid silver;
+    background: white;
+}
+
+.answer-input textarea
+{
+    width: 100%;
+    resize: none;
+}
+
+.answer-list
+{
+    background: white;
+    height: 350px;
+    max-height: 350px;
+    overflow-y: scroll;
+    border: 1px solid silver;
+}
+
+.question-poster
+{
+    float: left;
+    font-size: 10px;
+}
+
+.activity-item
+{
+    padding: 10px;
+    padding-left: 30px;
+    border-bottom: 1px solid silver;
+}
+
+.activity-date
+{
+    font-size: 12px;
+    color: silver;
+}
+
+.edit-content
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.edit-content h3
+{
+    margin: 0;
+    padding: 0;
+}
+
+.edit-user input[type="text"], .edit-user input[type="password"],
+.edit-user input[type="submit"], .edit-course select,
+.remove-course select, .edit-course input[type="submit"],
+.remove-course input[type="submit"]
+{
+    width: 200px;
+}
+
+.edit-user, .edit-course, .remove-course
+{
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border: 1px solid silver;
+    border-bottom: none;
+}
+
+.remove-course
+{
+    border: 1px solid silver;
+}
+
+.current-course-button, .previous-course-button
+{
+    width: 120px;
+    margin-left: 20px;
+}
+
+.message-area
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.message-area h2
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.message-table
+{
+    width: 100%;
+    border-bottom: 1px solid silver;
+}
+
+.message-header
+{
+    background: white;
+    color: pink;
+    width: 100%;
+}
+
+.message-left
+{
+    padding: 5px;
+    padding-left: 15px;
+    width: 10%;
+}
+
+.message-right
+{
+    width: 80%;
+}
+
+.message-button
+{
+    width: 100%;
+}
+
+.message-item
+{
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid silver;
+}
+
+.message-body
+{
+    margin-top: 10px;
+    background: white;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    border: 1px solid silver;
+}
+
+.new-message-form
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding-bottom: 10px;
+}
+
+.new-message-form h4
+{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    background: #367ab7;
+    color: white;
+    padding: 5px;
+}
+
+.new-message-form select, .new-message-form input[type="text"],
+.new-message-form textarea, .new-message-form input[type="submit"]
+{
+    width: 70%;
+    resize: none;
+}
+
+.new-message-form textarea, .new-message-form input[type="text"]
+{
+    margin-top: 5px;
+}
+
+.new-message-form textarea
+{
+    height: 80px;
+}
+
+.reply-area
+{
+    background: white;
+    height: auto;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hangout-container
+{
+    width: 80%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hangout-container h2
+{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.hangout-sidebar
+{
+    background: white;
+    color: white;
+    width: 40%;
+    height: 500px;
+    float: left;
+    padding: 0;
+    margin: 0;
+    border: 1px solid silver;
+    border-right: none;
+}
+
+.hangout-left
+{
+    width: 40%;
+    font-weight: bold;
+    color: #367ab7;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.hangout-header
+{
+    background: #367ab7;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 5%;
+}
+
+.hangout-header h4
+{
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+.hangout-users
+{
+    height: 95%;
+    max-height: 95%;
+    overflow-y: scroll;
+    background: white;
+    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.hangout-user
+{
+    margin-bottom: 5px;
+}
+
+.hangout-main
+{
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    background: white;
+    border: 1px solid silver;
+    padding-top: 5px;
+}
+
+.hangout-main-body
+{
+    margin-right: 2px;
+}
+
+.course-list-container
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-list-table
+{
+    width: 100%;
+    background: white;
+}
+
+.course-list-header
+{
+    background: #367ab7;
+    color: white;
+}
+
+.course-list-name
+{
+    width: 20%;
+    padding: 5px;
+}
+
+.course-list-name a
+{
+    text-decoration: none;
+}
+
+.course-list-description
+{
+    width: 60%;
+}
+
+.chart-legend ul
+{
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.chart-legend li span
+{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.chart-legend li
+{
+    list-style-type: none;
+}
+
+.statistics
+{
+    margin-top: 20px;
+    padding-top: 0;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+.statistic-body
+{
+    height: 600px;
+    max-height 600px;
+    overflow-y: scroll;
+    padding-top: 10px;
+}
+
+.statistics h3
+{
+    margin: 0;
+    padding: 5px;
+    background: #367ab7;
+    color: white;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chart-legend
+{
+    padding-left: 25%;
+    border-bottom: 1px solid silver;
+}
+
+.rating-stats
+{
+    border-bottom: 1px solid silver;
+}
+
+.chart
+{
+    margin-top: 10px;
+}
+
+.current-students
+{
+    height: 50%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    padding-bottom: 5px;
+}
+
+.previous-students
+{
+    height: 50%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.current-students-header
+{
+    background: #367ab7;
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding-left: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.current-students-body
+{
+    height: 90%;
+    max-height: 90%;
+    overflow-y: scroll;
+    border: 1px solid silver;
+    padding-left: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.previous-students-header
+{
+    background: #367ab7;
+    color: white;
+    width: 100%;
+    height: 10%;
+    padding-left: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.previous-students-body
+{
+    height: 90%;
+    max-height: 90%;
+    overflow-y: scroll;
+    border: 1px solid silver;
+    padding-left: 20px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.badge-container
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.badge-header h3
+{
+    background: #367ab7;
+    color: white;
+    padding: 5px;
+}
+
+.badge-body
+{
+    padding-bottom: 10px;
+}
+
+.badge-courses-header h3
+{
+    background: #367ab7;
+    color: white;
+    padding: 5px;
+    margin: 0;
+}
+
+.badge-courses-body
+{
+    height: 200px;
+    max-height: 200px;
+    overflow-y: scroll;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 1199px)
+{
+    .container
+    {
+        width: 100%;
+    }
+
+    .activity-feed
+    {
+        height: auto;
+        max-height: auto;
+    }
+
+    .side-bar
+    {
+        width: 100%;
+        height: 140px;
+    }
+
+    .edit-box
+    {
+        width: 100%;
+    }
+
+    .current-course-panel, .previous-course-panel
+    {
+        height: auto;
+    }
+
+    .current-courses, .previous-courses,
+    .hangout-list, .activity-feed
+    {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .hangoutDiv, .hangPanel,
+    .activityDiv, .activityPanel,
+    .courseDiv, .coursePanel
+    {
+        height: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.navbar-default {
+  background-color: #367ab7;
+  border-color: #275883;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #367ab7;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #ffffff;
+  background-color: #275883;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #367ab7;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #275883;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #275883;
+}
+.navbar-default .navbar-toggle {
+  border-color: #275883;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #275883;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #275883;
+  }
+}
+
+@media (max-width: 920px)
+{
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in {
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
